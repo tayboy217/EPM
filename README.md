@@ -1,25 +1,30 @@
-# EPM
+# EPM(EnglishPhraseMaster)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+英語学習者向けのアプリです。
+ユーザー自身でオリジナルフレーズ帳の作成ができ、1日のタスク管理や学習スケジュール管理も行うことができます。
+### サイトテーマ
+ユーザー自信が必要とする英語フレーズの記録を行い、ユーザー自身で作り上げていくオリジナルプレーズ帳・モチベーション維持をするためのタス管理システム・スケジュール管理。ユーザー自身で成長を実感していき、日々コツコツ英語力を積み上げていくサイトです。
 
-Things you may want to cover:
+### テーマを選んだ理由
+　英語学習者の貢献ができ、少しでも役に立てれば良いなと感じこのテーマを選択しました。また私自身英語学習を行っている際、沢山の英語フレーズを覚え英語力を向上してきました。その際自分が覚えたいフレーズなどをノートに書き起こし、何冊もフレーズ帳を自身で作成してきました。ですが何冊もフレーズ帳を作成していくにつれ学習管理が難しくなり、復習内容にばらつきが出ました。どのフレーズを覚え、どのフレーズがまだ理解が浅いかなどわからなくなることが多々ありました。そんな中、英語フレーズ帳を自身で簡単に作成でき、かつタスク管理やスケジュール管理が1つのアプリで簡単にできたら便利だな。と感じ、EPM(EnglishPhraseMaster)の作成を致しました。このアプリを通じ英語学習者が英語力向上ができ、英語フレーズマスターになれれば幸いです。
 
-* Ruby version
+### ターゲットユーザ
+- 英語学習者（学生・社会人）
 
-* System dependencies
+### 主な利用シーン
+- 英語学習
+- 学習管理
 
-* Configuration
+## 設計書
+- 
 
-* Database creation
+## チャレンジ要素一覧
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# English_Phrase_Master
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
