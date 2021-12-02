@@ -29,7 +29,8 @@
 
 ## 設計書
 - 画面遷移図（作成中）
-- ![ER図](https://user-images.githubusercontent.com/90984182/144413723-9ba88d12-ab5e-4abe-b904-f57059cb9228.jpeg)
+- ER図
+![ER図](https://user-images.githubusercontent.com/90984182/144413723-9ba88d12-ab5e-4abe-b904-f57059cb9228.jpeg)
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1MfnYCNpz64U_wywOm3juZzdI1jaVRwaD64kSEASDYYM/edit?usp=sharing
