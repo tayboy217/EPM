@@ -38,7 +38,7 @@
 
 
 ## チャレンジ要素一覧
-- [スプレットシートを開く](https://docs.google.com/spreadsheets/d/1MfnYCNpz64U_wywOm3juZzdI1jaVRwaD64kSEASDYYM/edit?usp=sharing)
+- [チャレンジ要素一覧をチェック](https://docs.google.com/spreadsheets/d/1MfnYCNpz64U_wywOm3juZzdI1jaVRwaD64kSEASDYYM/edit?usp=sharing)
 
 ## 開発環境
 - OS：Linux(CentOS)
