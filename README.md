@@ -31,7 +31,7 @@
 ## ER図
 ![ER図](https://user-images.githubusercontent.com/90984182/144413723-9ba88d12-ab5e-4abe-b904-f57059cb9228.jpeg)
 
-##＃ その他設計書
+### その他設計書
 - 画面遷移図（作成中）
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/112JjwDTQdes9IgdLK4uTeMKm8Mk-7Nps0uqPaKogyxk/edit?usp=sharing)
 - 詳細設計（作成中）
