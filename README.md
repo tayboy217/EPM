@@ -29,16 +29,16 @@
 
 
 ## ER図
-![ER図](https://user-images.githubusercontent.com/90984182/144413723-9ba88d12-ab5e-4abe-b904-f57059cb9228.jpeg)
+![ER図](https://user-images.githubusercontent.com/90984182/144701678-bb5d5b46-0237-4772-839c-329c205b0d1b.jpeg)
 
 ### その他設計書
 - 画面遷移図（作成中）
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/112JjwDTQdes9IgdLK4uTeMKm8Mk-7Nps0uqPaKogyxk/edit?usp=sharing)
-- 詳細設計（作成中）
+- [詳細設計](https://docs.google.com/spreadsheets/d/1tK1s2RFElL6D6YgRcYi2Baa3WsXKAzHAJ2e6nAAsbYw/edit?usp=sharing
 
 
 ## チャレンジ要素一覧
-- [チャレンジ要素一覧をチェック](https://docs.google.com/spreadsheets/d/1MfnYCNpz64U_wywOm3juZzdI1jaVRwaD64kSEASDYYM/edit?usp=sharing)
+[チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1MfnYCNpz64U_wywOm3juZzdI1jaVRwaD64kSEASDYYM/edit?usp=sharing)
 
 ## 開発環境
 - OS：Linux(CentOS)
