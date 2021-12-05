@@ -3,13 +3,10 @@
 class Public::SessionsController < Devise::SessionsController
   
   #ゲストログイン
-  def new_guest
-    user = User.find(1)
-    user.update(email: 'guest@example.com',name: 'ゲストユーザー') do |user|
-      user.password = SecureRandom.urlsafe_base64
-    end
+  def guest_sign_in
+    user = User.guest
     sign_in user
-    redirect_to root_path
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
   
   # before_action :configure_sign_in_params, only: [:create]
