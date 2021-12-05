@@ -29,7 +29,7 @@
 
 
 ## ER図
-![ER図](https://user-images.githubusercontent.com/90984182/144701678-bb5d5b46-0237-4772-839c-329c205b0d1b.jpeg)
+![ER図](https://user-images.githubusercontent.com/90984182/144742887-58db91dc-69c9-4b5e-b741-00fd10e66201.jpeg)
 
 ### その他設計書
 - 画面遷移図（作成中）
