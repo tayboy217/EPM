@@ -29,10 +29,9 @@
 
 
 ## ER図
-![ER図](https://user-images.githubusercontent.com/90984182/144742887-58db91dc-69c9-4b5e-b741-00fd10e66201.jpeg)
+![ER図](https://user-images.githubusercontent.com/90984182/144742980-dc6618a2-7d25-4b71-8dad-d6be8adb1064.jpeg)
 
 ### その他設計書
-- 画面遷移図（作成中）
 - [テーブル定義書](https://docs.google.com/spreadsheets/d/112JjwDTQdes9IgdLK4uTeMKm8Mk-7Nps0uqPaKogyxk/edit?usp=sharing)
 - [詳細設計](https://docs.google.com/spreadsheets/d/1tK1s2RFElL6D6YgRcYi2Baa3WsXKAzHAJ2e6nAAsbYw/edit?usp=sharing)
 
