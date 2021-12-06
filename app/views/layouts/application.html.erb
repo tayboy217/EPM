@@ -10,12 +10,23 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %>
-    <%= link_to 'ログイン', new_user_session_path %>
-    <%= link_to '新規登録', new_user_registration_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%= yield %>
+    <div class="wrapper">
+      
+      <header>
+        <%= render "layouts/header" %>
+      </header>
+    
+      <p><%= notice %></p>
+      <p><%= alert %></p>
+      
+      <main>
+            <%= yield %>
+      </main>
+      
+      <footer>
+        <%= render "layouts/footer" %>
+      </footer>
+      
+    </div>
   </body>
 </html>

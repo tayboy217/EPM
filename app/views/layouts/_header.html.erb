@@ -1,0 +1,55 @@
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+        <%= link_to "EPM", root_path, class: "navbar-brand" %>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+             <!--会員一覧-->
+            </li>
+            <li class="nav-item">
+             <!--お問い合わせ-->
+            </li>
+            <li class="nav-item">
+             <!--ログアウト-->
+            </li>
+          <% elsif user_signed_in? %>
+            <li class="nav-item"> 
+              <!--Mypage-->
+            </li>
+            <li class="nav-item"> 
+              <!--Note-->
+            </li>
+            <li class="nav-item"> 
+              <!--Task-->
+            </li>
+            <li class="nav-item"> 
+              <!--Schedule-->
+            </li>
+            <li class="nav-item"> 
+              <!--Contact-->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %></a>
+            </li>
+          <% else %>
+            <li class="nav-item"> 
+              <a class="nav-link" href="#"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:"nav-link" %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to 'ログイン', new_user_session_path, class:"nav-link" %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><%= link_to '新規登録', new_user_registration_path, class:"nav-link" %></a>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>

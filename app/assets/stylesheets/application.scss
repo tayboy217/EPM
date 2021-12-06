@@ -14,5 +14,20 @@
  *= require_self
  */
  
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer{
+  margin-top: auto;
+  background-color: #174a5c;
+  color: white;
+  text-align: center;
+}
