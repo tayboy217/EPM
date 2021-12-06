@@ -1,3 +1,22 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
-
+<!--仮のレイアウト-->
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <%= image_tag 'img1.png', class: "img-fluid" %>
+    </div>
+  </div>
+</div>
+<% if user_signed_in? %>
+<div class="container">
+    <h1>新規投稿</h1>
+    <%= form_with model: @note, url:'public/notes', local:true do |f| %>
+      <div>単語</div>
+      <%= f.text_field :word %>
+      <div>日本語</div>
+      <%= f.text_area :japanese %>
+      <div>英語</div>
+      <%= f.text_area :english %>
+      <%= f.submit '投稿' %>
+    <% end %>
+</div>
+<% end %>
