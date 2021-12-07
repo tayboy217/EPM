@@ -1,0 +1,9 @@
+ <%= form_with model: note, url:'/notes', local:true do |f| %>
+   <div>単語</div>
+  <%= f.text_field :word %>
+   <div>日本語</div>
+  <%= f.text_area :japanese %>
+   <div>英語</div>
+  <%= f.text_area :english %>
+  <%= f.submit '投稿' %>
+ <% end %>

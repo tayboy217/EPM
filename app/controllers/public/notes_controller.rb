@@ -3,6 +3,12 @@ class Public::NotesController < ApplicationController
   def new
     @note = Note.new
   end
+  
+  def index
+  end
+  
+  def show
+  end
 
   def create
     @note = Note.new(note_params)
@@ -10,7 +16,7 @@ class Public::NotesController < ApplicationController
   if @note.save
     redirect_to note_path(@note)
   else
-    render :new
+    render "public/homes/top"
   end
   end
 

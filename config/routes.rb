@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #デバイスUser側
   devise_for :users,skip: [:passwords,], controllers: {
   registrations: "public/registrations",
@@ -15,9 +16,11 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
 
- root to: 'home#top'
- 
- resources :notes
+ scope module: :public do
+   root to: 'homes#top'
+   resources :notes 
+  end
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
