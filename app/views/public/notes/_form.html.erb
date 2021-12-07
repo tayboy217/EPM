@@ -1,4 +1,6 @@
  <%= form_with model: note, url:'/notes', local:true do |f| %>
+   <div>日付</div>
+  <%#= user.created_at %>
    <div>単語</div>
   <%= f.text_field :word %>
    <div>日本語</div>
