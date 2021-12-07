@@ -18,6 +18,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #777;
+}
+
 
 .wrapper {
   display: flex;
@@ -27,7 +32,7 @@
 
 footer{
   margin-top: auto;
-  background-color: #174a5c;
-  color: white;
+  background-color: #073839;
+  color: #fff;
   text-align: center;
 }
