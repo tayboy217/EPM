@@ -1,0 +1,11 @@
+<h1>REMEMBER_INDEX</h1>
+投稿詳細表示（覚える）
+
+<% @notes.each do |note| %>
+<p>単語</p>
+<%= note.word %>
+<p>日本語</p>
+<%= note.japanese %>
+<p>英語</p>
+<%= note.english %>
+<% end %>

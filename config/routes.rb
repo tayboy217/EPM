@@ -18,9 +18,16 @@ Rails.application.routes.draw do
 
  scope module: :public do
    root to: 'homes#top'
-   resources :notes 
+   resources :notes , only: [ :new, :create, :edit, :update, :destroy]do
+     member do
+       get :remember
+       get :complete
+     end
+     collection do
+       get :remember_index
+       get :complete_index
+     end
   end
+end
   
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
