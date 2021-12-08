@@ -1,2 +1,36 @@
-<h1>COMPLETE_INDEX</h1>
-投稿一覧表示（覚えた）
+<div class="container">
+ <div class="row">
+  <h1>COMPLETE_INDEX</h1>
+ </div>
+</div>
+<div class="container">
+ <div class="row">
+   <%= link_to "覚えるページ", remember_index_notes_path %>
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-success">
+          <th>︎</th>
+          <th>単語</th>
+          <th>日本語</th>
+          <th>英語</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @notes.each do |note| %>
+        <tr>
+          <th scope="row">︎</th>
+          <td><%= note.word %></td>
+          <td><%= note.japanese %></td>
+          <td><%= note.english %></td>
+          <td><%= link_to "覚える", forget_note_path(note), method: :post %></td>
+          <td><%= link_to "編集", edit_note_path(note) %> </td>
+          <td><%= link_to "削除", note_path(note), method: :delete, data: { confirm: "削除しますか？" } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

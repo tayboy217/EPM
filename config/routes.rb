@@ -18,10 +18,12 @@ Rails.application.routes.draw do
 
  scope module: :public do
    root to: 'homes#top'
-   resources :notes , only: [ :new, :create, :edit, :update, :destroy]do
+   resources :notes , only: [:new, :create, :edit, :update, :destroy]do
      member do
        get :remember
        get :complete
+       post :done
+       post :forget
      end
      collection do
        get :remember_index
