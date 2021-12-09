@@ -5,10 +5,11 @@ class Public::NotesController < ApplicationController
   end
 
   def remember
+     @note = Note.find(params[:id])
   end
 
   def complete
-
+    @note = Note.find(params[:id])
   end
 
   def done
@@ -48,6 +49,12 @@ class Public::NotesController < ApplicationController
   end
 
   def update
+     @note = Note.find(params[:id])
+  if @note.update(note_params)
+     redirect_to remember_index_notes_path
+  else
+     render :edit
+  end
   end
 
   def destroy

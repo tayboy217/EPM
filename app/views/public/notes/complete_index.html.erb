@@ -21,7 +21,7 @@
       <tbody>
       <% @notes.each do |note| %>
         <tr>
-          <th scope="row">︎</th>
+          <th scope="row"><%= link_to "詳細", complete_note_path(note), method: :get %>︎</th>
           <td><%= note.word %></td>
           <td><%= note.japanese %></td>
           <td><%= note.english %></td>
