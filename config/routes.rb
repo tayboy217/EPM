@@ -16,20 +16,21 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
 
- scope module: :public do
-   root to: 'homes#top'
-   resources :notes , only: [:new, :create, :edit, :update, :destroy]do
-     member do
-       get :remember
-       get :complete
-       post :done
-       post :forget
+   scope module: :public do
+     root to: 'homes#top'
+     resources :notes , only: [:new, :create, :edit, :update, :destroy]do
+       member do
+         get :remember
+         get :complete
+         post :done
+         post :forget
+       end
+       collection do
+         get :remember_index
+         get :complete_index
+       end
      end
-     collection do
-       get :remember_index
-       get :complete_index
-     end
-  end
-end
-  
+     resources :tasks
+    end
+
 end
