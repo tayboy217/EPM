@@ -2,11 +2,11 @@ class Public::TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
   end
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
   end
 
   def show
