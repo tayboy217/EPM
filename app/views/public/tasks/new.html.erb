@@ -2,10 +2,18 @@
 
  <%= form_with model: @task, local:true do |f| %>
    <div>タスク内容</div>
-  <%= f.text_field :body%>
+  <%= f.text_field :title %>
+  <%= f.datetime_field :starts_at %>
+  <%= f.datetime_field :ends_at %>
   <%= f.submit '投稿' %>
  <% end %>
- 
+
  <h1>今日やること！！</h1>
- <%#= @task.body %>
- 
+
+ <% @tasks.each do |task| %>
+<div>
+ <p><%= task.title %></p>
+ <p><%= task.starts_at %></p>
+ <p><%= task.ends_at %></p>
+</div>
+<% end %>
