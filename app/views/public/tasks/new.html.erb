@@ -15,5 +15,6 @@
  <p><%= task.title %></p>
  <p><%= task.starts_at %></p>
  <p><%= task.ends_at %></p>
+ <p><%= link_to "削除", task_path(task), method: :delete, data: { confirm: "削除しますか？" } %></p>
 </div>
 <% end %>

@@ -6,9 +6,12 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
 <% if user_signed_in? %>
 <div class="container">
   <h1>新規投稿</h1>
   <%= render 'public/notes/form', note: @note %>
 </div>
+<% else %>
+   <%= link_to "管理者ログインはこちら",  new_admin_session_path %>
 <% end %>

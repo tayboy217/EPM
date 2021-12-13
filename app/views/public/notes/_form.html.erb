@@ -1,11 +1,11 @@
  <%= form_with model: note, local:true do |f| %>
-   <div>日付</div>
+  <!--<div>日付</div>-->
   <%#= user.created_at %>
    <div>単語</div>
-  <%= f.text_field :word %>
-   <div>日本語</div>
-  <%= f.text_area :japanese %>
+  <%= f.text_field :word%>
    <div>英語</div>
   <%= f.text_area :english %>
+   <div>日本語</div>
+  <%= f.text_area :japanese %>
   <%= f.submit '投稿' %>
  <% end %>
