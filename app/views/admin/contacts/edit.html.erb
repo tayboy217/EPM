@@ -1,14 +1,14 @@
 <h2>お問い合わせ内容</h2>
   <%= form_with model: Contact, local:true do |f| %>
-    <h3>ユーザー名</h3>
+    <div>ユーザー名</div>
      <%= @contact.user.name %>さん
-    <h3>問い合わせ日</h3>
+    <div>問い合わせ日</div>
      <%= @contact.created_at.strftime("%Y年%m月%d日 ") %>
-    <h3>タイトル</h3>
+    <div>タイトル</div>
      <%= @contact.title %>
-    <h3>問い合わせ内容</h3>
+    <div>問い合わせ内容</div>
      <%= @contact.body %>
-    <h3>返信</h3>
+    <div>返信</div>
      <%= f.text_area :reply, class:"form-control", placeholder: "返信内容" %>
      <%= f.submit "送信" %>
   <% end %>
