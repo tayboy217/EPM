@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+
   #デバイスUser側
   devise_for :users,skip: [:passwords,], controllers: {
   registrations: "public/registrations",
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end
-  
+
 
   #デバイスAdmin側
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
@@ -21,11 +21,17 @@ Rails.application.routes.draw do
     #Admin側
    namespace :admin do
        resources :contacts, only: [:index, :edit, :update, :destroy]
+       resources :users, only: [:index, :show, :edit, :update]
    end
 
    #Public/User側
    scope module: :public do
      root to: 'homes#top'
+     resources :users, only: [:edit, :update] do
+       collection do
+         get :show
+      end
+      end
      resources :notes , only: [:new, :create, :edit, :update, :destroy]do
        member do
          get :remember
