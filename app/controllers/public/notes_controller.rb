@@ -1,5 +1,6 @@
 class Public::NotesController < ApplicationController
 
+
   def new
      @note = Note.new
   end
@@ -63,7 +64,12 @@ class Public::NotesController < ApplicationController
      redirect_to remember_index_notes_path
   end
 
+  def search
+     @notes = current_user.notes.all
+  end
+
   private
+
   def note_params
     params.require(:note).permit(:word, :japanese, :english)
   end

@@ -11,31 +11,31 @@
 
   <body>
     <div class="wrapper">
-      
+
       <header class="shadow">
         <%= render "layouts/header" %>
       </header>
-    
+
       <% if flash[:notice] %>
      <div class="notification is-info">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
-    
+
      <% if flash[:alert] %>
       <div class="notification is-danger">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-      
+
       <main>
             <%= yield %>
       </main>
-      
+
       <footer>
         <%= render "layouts/footer" %>
       </footer>
-      
+
     </div>
   </body>
 </html>

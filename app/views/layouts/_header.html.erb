@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #75B5A1;">
       <div class="container-fluid">
-        <%= link_to "EPM", root_path, class: "navbar-brand" %>
+        <%= link_to "EPM", root_path, class: "navbar-brand my-4" %>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,8 +36,15 @@
               <a class="nav-link" href="#"><%= link_to "Contact", new_contact_path, class:"nav-link" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link" %></a>
+              <a class="nav-link" href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link mr-2" %></a>
             </li>
+            <!--検索機能-->
+             <form class="form-group my-3">
+              <%= search_form_for @search, url: search_notes_path do |f| %>
+                <%= f.text_field :word_cont ,placeholder: '検索するテキストを入力...'%>
+                <%= f.submit ("検索") , class: 'btn btn-outline-success ml-2'%>
+              <% end %>
+             </form>
           <% else %>
             <li class="nav-item">
               <a class="nav-link" href="#"><%= link_to 'Guest', users_guest_sign_in_path, method: :post, class:"nav-link" %></a>

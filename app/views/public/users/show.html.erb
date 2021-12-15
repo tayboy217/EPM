@@ -52,8 +52,8 @@
                 {
                   label: '投稿したフレーズの数',
                   data: [<%= current_user.notes.created_6day_ago.count %>, <%= current_user.notes.created_5day_ago.count %>, <%= current_user.notes.created_4day_ago.count %>, <%= current_user.notes.created_3day_ago.count %>, <%= current_user.notes.created_2day_ago.count %>, <%= current_user.notes.created_yesterday.count %>, <%= current_user.notes.created_today.count %>],
-                  borderColor: "rgba(0,0,255,1)",
-                  backgroundColor: "rgba(0,0,0,0)"
+                  borderColor: "rgba(219,39,91,0.5)",
+                  backgroundColor: "rgba(219,39,91,0.5)"
                 }
               ],
             },
@@ -80,4 +80,3 @@
       });
   </script>
 </div>
- 

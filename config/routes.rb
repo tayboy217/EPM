@@ -42,6 +42,7 @@ Rails.application.routes.draw do
        collection do
          get :remember_index
          get :complete_index
+         get :search
        end
      end
      resources :tasks

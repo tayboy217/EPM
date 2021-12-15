@@ -1,0 +1,10 @@
+<tbody>
+<% @search_notes.each do |note| %>
+  <tr>
+    <td><%= note.word %></td>
+    <td><%= note.english %></td>
+    <td><%= note.japanese %></td>
+    <td><%= link_to '戻る', remember_index_notes_path %></td>
+ </tr>
+<% end %>
+</tbody>

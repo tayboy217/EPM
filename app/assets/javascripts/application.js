@@ -47,7 +47,7 @@ $(function () {
             // Drag & Drop & Resize
             editable: true,
             //イベントの色を変える
-            eventColor: '#7CD4BB',
+            eventColor: '#EBAFA2',
             //イベントの文字色を変える
             eventTextColor: '#475263',
             eventRender: function(event, element) {
