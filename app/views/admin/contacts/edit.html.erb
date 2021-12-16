@@ -1,5 +1,6 @@
 <h2>お問い合わせ内容</h2>
-  <%= form_with model: Contact, local:true do |f| %>
+
+  <%= form_with model: Contact, url: admin_contact_path(@contact),  local:true, method: :patch do |f| %>
     <div>ユーザー名</div>
      <%= @contact.user.name %>さん
     <div>問い合わせ日</div>

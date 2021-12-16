@@ -1,14 +1,14 @@
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #75B5A1;">
-      <div class="container-fluid">
-        <%= link_to "EPM", root_path, class: "navbar-brand my-4" %>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #75B5A1;">
+    <div class="container">
+        <%= link_to image_tag("EPM-4.png", size: "70x70"), root_path %>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+         <div class="collapse navbar-collapse " id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
             <li class="nav-item">
              <a class="nav-link" href="#"><%= link_to "User", admin_users_path, class:"nav-link" %></a>
@@ -20,41 +20,23 @@
              <a class="nav-link" href="#"><%= link_to "Logout", destroy_admin_session_path, method: :delete, class:"nav-link" %></a>
             </li>
           <% elsif user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Mypage", users_path, class:"nav-link", data: {"turbolinks" => false} %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Note", remember_index_notes_path, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Task", new_task_path, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Schedule", tasks_path, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Contact", new_contact_path, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link mr-2" %></a>
+            <li><%= link_to "Mypage", users_path, class:"nav-link", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "Note", remember_index_notes_path, class:"nav-link" %></li>
+            <li><%= link_to "Task", new_task_path, class:"nav-link" %></li>
+            <li><%= link_to "Schedule", tasks_path, class:"nav-link" %></li>
+            <li><%= link_to "Contact", new_contact_path, class:"nav-link" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link mr-2" %></li>
             </li>
             <!--検索機能-->
-             <form class="form-group my-3">
               <%= search_form_for @search, url: search_notes_path do |f| %>
-                <%= f.text_field :word_cont ,placeholder: '検索するテキストを入力...'%>
-                <%= f.submit ("検索") , class: 'btn btn-outline-success ml-2'%>
+                <%= f.text_field :word_cont ,placeholder: 'Word Search...'%>
+                <%= f.submit ("Search") , class: 'btn btn-success'%>
               <% end %>
-             </form>
+
           <% else %>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to 'Guest', users_guest_sign_in_path, method: :post, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to 'Login', new_user_session_path, class:"nav-link" %></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><%= link_to 'Signup', new_user_registration_path, class:"nav-link" %></a>
-            </li>
+            <li><%= link_to 'Guest', users_guest_sign_in_path, method: :post, class:"nav-link" %></li>
+            <li><%= link_to 'Login', new_user_session_path, class:"nav-link" %></li>
+            <li><%= link_to 'Signup', new_user_registration_path, class:"nav-link" %></li>
           <% end %>
           </ul>
         </div>
