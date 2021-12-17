@@ -28,11 +28,11 @@ class Public::NotesController < ApplicationController
   end
 
   def remember_index
-    @notes = current_user.notes.where(complete: [false,nil])
+    @notes = current_user.notes.where(complete: [false,nil]).page(params[:page]).per(5).order('updated_at DESC')
   end
 
   def complete_index
-     @notes = current_user.notes.where(complete: true)
+     @notes = current_user.notes.where(complete: true).page(params[:page]).per(5).order('updated_at DESC')
   end
 
   def create
