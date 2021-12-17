@@ -1,8 +1,31 @@
-<h1>COMPLETE</h1>
-投稿詳細表示（覚えた）
+<div class="container">
+  <div class="row">
+  <h3 class="mt-4">覚えたフレーズ詳細</h3>
+  </div>
+</div>
+<div class="container">
+ <div class="row">
+  <%= link_to "覚えたページ一覧", complete_index_notes_path, class: "btn btn-outline-success mt-2 mb-2" %>
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-success">
+          <th></th>
+          <th>キーワード</th>
+          <th>英語</th>
+          <th>日本語</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">︎</th>
+          <td><%= @note.word %></td>
+          <td><%= @note.english %></td>
+          <td><%= @note.japanese %></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div>
 
-<%= @note.word  %>
-
-<%= @note.english  %>
-
-<%= @note.japanese  %>

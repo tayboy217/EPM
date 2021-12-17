@@ -17,16 +17,12 @@
       </header>
 
       <% if flash[:notice] %>
-     <div class="notification is-info">
         <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
+      <% end %>
 
-     <% if flash[:alert] %>
-      <div class="notification is-danger">
+      <% if flash[:alert] %>
         <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
+      <% end %>
 
       <main>
             <%= yield %>
