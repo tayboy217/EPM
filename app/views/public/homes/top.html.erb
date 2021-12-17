@@ -1,17 +1,27 @@
-<!--仮のレイアウト-->
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="text-center">-->
-<!--      <%#= image_tag 'img1.png', class: "img-fluid" %>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
 <% if user_signed_in? %>
 <div class="container">
-  <h1>新規投稿</h1>
+  <div class="row">
+    <h2 class="mt-4">新規投稿</h2>
+  </div>
   <%= render 'public/notes/form', note: @note %>
 </div>
 <% else %>
-   <%= link_to "管理者ログインはこちら",  new_admin_session_path %>
+<section id="hero">
+  <div class="hero-container">
+    <h1>Welcome to EPM</h1>
+    <h2><%= link_to "管理者はこちら",  new_admin_session_path, class: "text-light" %></h2>
+    <h2><%= link_to 'ゲスト(閲覧用)はこちら', users_guest_sign_in_path, method: :post, class:"text-light" %></h2>
+    <h2><%= link_to 'ログインはこちら', new_user_session_path, class:"text-light" %></h2>
+    <h2><%= link_to '新規登録はこちら', new_user_registration_path, class:"text-light" %></h2>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-container">
+    <div class="section-title">
+      <h1>About</h1>
+    </div>
+     英語学習者向けのアプリ
+  </div>
+</section>
 <% end %>

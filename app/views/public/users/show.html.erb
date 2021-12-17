@@ -1,10 +1,15 @@
 <div class="container">
+  <div class="row">
+   <h3 class="mt-4">ユーザー情報</h3>
+  </div>
+ <br>
   <table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Time</th>
+      <th>Date</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -12,15 +17,13 @@
       <td><%= @user.name %></td>
       <td><%= @user.email %></td>
       <td><%= @user.created_at.strftime("%Y年%m月%d日 ") %></td>
-      <td><%= link_to "編集", edit_user_path(@user) %></td>
+      <td><%= link_to "編集", edit_user_path(@user), class: "btn btn-outline-info"  %></td>
     </tr>
   </tbody>
 </table>
 </div>
-<br>
-
 <div class="container">
-<h4>7日間分の投稿数</h4>
+<h4 class="mt-5">7日間分の投稿数</h4>
 <table class='table table-borderd'>
   <thead>
     <tr>

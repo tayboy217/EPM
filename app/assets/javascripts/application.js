@@ -18,6 +18,8 @@
 //= require moment
 //= require fullcalendar
 
+
+
 $(function () {
     $(document).on('turbolinks:load', function () {
         function eventCalendar() {

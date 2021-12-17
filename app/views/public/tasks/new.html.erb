@@ -1,20 +1,23 @@
-<h1>タスク新規投稿画面</h1>
-
- <%= form_with model: @task, local:true do |f| %>
-   <div>タスク内容</div>
-  <%= f.text_field :title %>
-  <%= f.datetime_field :starts_at %>
-  <%= f.datetime_field :ends_at %>
-  <%= f.submit '投稿' %>
- <% end %>
-
- <h1>今日やること！！</h1>
-
+<div class="container">
+ <div class="row">
+  <h3 class="mt-4">タスク新規投稿</h3>
+ </div>
+  <%= form_with model: @task, local:true do |f| %>
+    <div>タスク内容</div>
+   <%= f.text_field :title %>
+   <%= f.datetime_field :starts_at %>
+   <%= f.datetime_field :ends_at %>
+   <%= f.submit '投稿' %>
+  <% end %>
+</div>
+<div class="container">
+ <h4 class="mt-4">ToDoList</h4>
  <% @tasks.each do |task| %>
 <div>
  <p><%= task.title %></p>
  <p><%= task.starts_at %></p>
  <p><%= task.ends_at %></p>
- <p><%= link_to "削除", task_path(task), method: :delete, data: { confirm: "削除しますか？" } %></p>
+ <p><%= link_to "削除", task_path(task), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-info"  %></p>
 </div>
 <% end %>
+</div>
