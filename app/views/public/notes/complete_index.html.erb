@@ -1,37 +1,28 @@
 <div class="container">
-  <div class="row">
+  <div class="d-flex">
   <h3 class="mt-4">覚えたフレーズ集</h3>
   </div>
 </div>
 <div class="container">
- <div class="row">
-   <%= link_to "覚えるページ", remember_index_notes_path, class: "btn btn-outline-success mt-2 mb-2" %>
-    <table class="table table-hover">
-      <thead>
-        <tr class="table-success">
-          <th>︎</th>
-          <th>キーワード</th>
-          <th>英語</th>
-          <th>日本語</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @notes.each do |note| %>
-        <tr>
-          <th scope="row"><%= link_to "詳細", complete_note_path(note), method: :get, class: "btn btn-outline-warning" %>︎</th>
-          <td><%= note.word %></td>
-          <td><%= note.english %></td>
-          <td><%= note.japanese %></td>
-          <td><%= link_to "覚える", forget_note_path(note), method: :post, class: "btn btn-outline-info"  %></td>
-          <td><%= link_to "編集", edit_note_path(note), class: "btn btn-outline-info"  %> </td>
-          <td><%= link_to "削除", note_path(note), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-info" %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+  <%= link_to "覚えるページ", remember_index_notes_path, class: "btn btn-outline-success mt-2 mb-2" %>
+  <div class="row">
+    <% @notes.each do |note| %>
+      <div class="col-md-4 mb-3">
+        <div class="card note-card">
+          <div class="card-body">
+            <h6 class="card-subtitle text-muted"><%= note.word %></h5>
+            <h5 class="card-title mb-2"><%= note.english %></h6>
+            <p class="card-text"><%= note.japanese %></p>
+            <div>
+              <%= link_to "詳細", remember_note_path(note), class: "btn btn-outline-warning" %>
+              <%= link_to "覚える", forget_note_path(note), method: :post, class: "btn btn-outline-info"  %>
+              <%= link_to "編集", edit_note_path(note), class: "btn btn-outline-info btn-sm"  %>
+              <%= link_to "削除", note_path(note), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-info btn-sm"  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<ul class="pagination justify-content-center"><%= paginate @notes %></ul>
+ <ul class="pagination justify-content-center"><%= paginate @notes %></ul>
 </div>

@@ -29,8 +29,8 @@
             </li>
             <!--検索機能-->
               <%= search_form_for @search, url: search_notes_path do |f| %>
-                <%= f.text_field :word_cont ,placeholder: 'Word Search...'%>
-                <%= f.submit ("Search") , class: 'btn btn-success'%>
+                <%= f.text_field :word_cont ,placeholder: 'Search...'%>
+                <%= f.submit ("Search") , class: 'btn-info'%>
               <% end %>
 
           <% else %>

@@ -1,6 +1,4 @@
  <%= form_with model: note, local:true do |f| %>
-  <!--<div>日付</div>-->
-  <%#= user.created_at %>
    <div>キーワード</div>
   <%= f.text_field :word%>
    <div>英語</div>
@@ -9,4 +7,5 @@
   <%= f.text_area :japanese %>
   <div class="mt-2">
   <%= f.submit '投稿' , class: "btn btn-outline-info"%>
+  </div>
  <% end %>

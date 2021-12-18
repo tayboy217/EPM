@@ -47,6 +47,39 @@
   background-color: #FFF6E6;
   border-radius: 5px;
 }
+.page-item.active .page-link {
+  color: #75B5A1;
+  background-color: #EEE8C8;
+}
+
+/*--------------------------------------------------------------
+# Skkiper
+--------------------------------------------------------------*/
+
+#images {
+  height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.image1 {
+  background-image: url("img8.jpg");
+  height: 400px;
+}
+.image2 {
+  background-image: url("img7.jpg");
+  height: 400px;
+}
+.image3 {
+  background-image: url("img6.jpg");
+  height: 400px;
+}
+.image4 {
+  background-image: url("img8.jpg");
+  height: 400px;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -123,13 +156,14 @@
   right: 0;
   display: flex;
   padding-top: 100px;
-  justify-content: center;
-  align-items: center;
+  padding-left: 100px;
+  justify-content: left;
+  align-items: left;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
 }
 
-#about h1 {
+#about h4 {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 300;
@@ -137,7 +171,7 @@
 }
 
 @media (max-width: 768px) {
-  #about h1 {
+  #about h4 {
     font-size: 28px;
     line-height: 36px;
   }
@@ -195,4 +229,8 @@ footer{
   background-color: #073839;
   color: #fff;
   text-align: center;
+}
+
+.note-card {
+  border: thick double rgba(0, 0, 0, .3) !important;
 }

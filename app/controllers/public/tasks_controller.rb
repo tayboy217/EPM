@@ -2,7 +2,7 @@ class Public::TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.where(complete: false)
   end
 
   def index
@@ -10,16 +10,17 @@ class Public::TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find(params[:id])
   end
 
   def create
      @task = Task.new(task_params)
      @task.user_id = current_user.id
-  if @task.save!
-     redirect_to new_task_path
-  else
-     render root_path
-  end
+     if @task.save!
+        redirect_to new_task_path
+     else
+        render root_path
+     end
   end
 
   def edit
@@ -37,7 +38,7 @@ class Public::TasksController < ApplicationController
 
   def destroy
      @task = Task.find(params[:id])
-     @task.destroy
+     @task.update(complete: true)
      redirect_to tasks_path
   end
 

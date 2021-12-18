@@ -1,6 +1,10 @@
 class Note < ApplicationRecord
   
     belongs_to :users,optional: true
+    
+    validates :word, presence: true
+    validates :english, presence: true
+    validates :japanese, presence: true
 
     # 日毎の投稿数スコープを作成取得する
     scope :created_today, -> {where(created_at: Time.zone.now.all_day)}
