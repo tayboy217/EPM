@@ -11,9 +11,9 @@
   </div>
   <%= form_with model: Contact, local:true  do |f| %>
     <%= f.label :タイトル %>
-    <%= f.text_field :title, class:"form-control" %>
+    <%= f.text_area :title, class:"form-control" %>
     <%= f.label :内容 %>
-    <%= f.text_field :body, class:"form-control" %>
+    <%= f.text_area :body, size: "5x5",class:"form-control" %>
   <div class="mt-2">
     <%= f.submit "送信", class: "btn btn-outline-info" %>
   </div>

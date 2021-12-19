@@ -2,7 +2,11 @@ class Public::TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @tasks = current_user.tasks.where(complete: false)
+    @tasks = current_user.tasks.where(complete: false).page(params[:page]).per(3).order('updated_at DESC')
+  end
+  
+  def complete
+    @tasks = current_user.tasks.where(complete: true).page(params[:page]).per(12).order('updated_at DESC')
   end
 
   def index
@@ -16,7 +20,7 @@ class Public::TasksController < ApplicationController
   def create
      @task = Task.new(task_params)
      @task.user_id = current_user.id
-     if @task.save!
+     if @task.save
         redirect_to new_task_path
      else
         render root_path

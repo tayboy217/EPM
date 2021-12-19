@@ -45,7 +45,11 @@ Rails.application.routes.draw do
          get :search
        end
      end
-     resources :tasks
+     resources :tasks do
+       member do
+         get :complete
+       end
+     end
      resources :contacts , only: [:new, :create]
    end
 end

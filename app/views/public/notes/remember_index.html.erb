@@ -14,8 +14,8 @@
             <h5 class="card-title mb-2"><%= note.english %></h6>
             <p class="card-text"><%= note.japanese %></p>
             <div>
-              <%= link_to "詳細", remember_note_path(note), class: "btn btn-outline-warning" %>
-              <%= link_to "覚えた", done_note_path(note), method: :post, class: "btn btn-outline-info"  %>
+              <%= link_to "覚えた", done_note_path(note), method: :post, class: "btn btn-outline-warning"  %>
+              <%= link_to "詳細", remember_note_path(note), class: "btn btn-outline-info bts-sm" %>
               <%= link_to "編集", edit_note_path(note), class: "btn btn-outline-info btn-sm"  %>
               <%= link_to "削除", note_path(note), method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-info btn-sm"  %>
             </div>

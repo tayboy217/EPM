@@ -1,5 +1,5 @@
 <div class="container">
- <div class="row">
+ <div class="d-flex">
   <h3 class="mt-4">タスク新規投稿</h3>
  </div>
   <%= form_with model: @task, local:true do |f| %>
@@ -12,18 +12,94 @@
 </div>
 <div class="container">
   <h4 class="mt-4">ToDoList</h4>
+  <%= link_to "タスク完了一覧", complete_task_path(@tasks), class: "btn btn-outline-success mt-2 mb-2" %>
   <div class="row">
-    <% @tasks.each do |task| %>
-      <div class="col-md-4 mb-3">
-        <div class="card task-card">
-          <div class="card-body">
-            <h4 class="card-subtitle text-muted"><%= task.title %></h4>
-            <p class="card-title mb-2"><%= task.starts_at %></p>
-            <p class="card-text"><%= task.ends_at %></p>
-            <div>
-              <%= link_to "完了", task_path(task), method: :delete, data: { confirm: "タスクは完了しましたか？" }, class: "btn btn-outline-info btn-sm"  %>
-            </div>
+  <% @tasks.each do |task| %>
+    <div class="col-md-4 mb-3">
+      <div class="card task-card">
+        <div class="card-body">
+          <h5 class="card-subtitle text-muted"><%= task.title %></h5>
+          <p class="card-tesxt mt-2"><%= task.starts_at %></p>
+          <p class="card-text mt-2"><%= task.ends_at %></p>
+          <div>
+          <%= link_to "完了", task_path(task), method: :delete, data: { confirm: "タスクは完了しましたか？" }, class: "btn btn-outline-warning"  %>
+          <%= link_to "編集", edit_task_path(task), class: "btn btn-outline-info btn-sm" %>
           </div>
-        </div>
       </div>
-    <% end %>
+    </div>
+  </div>
+ <% end %>
+</div>
+<div class="pagination justify-content-center"><%= paginate @tasks %></div>
+</div>
+
+<div class="container">
+<h4 class="mt-5">7日間分　完了したタスク数</h4>
+<div class="table-responsive">
+<table class='table table-borderd'>
+  <thead>
+    <tr>
+      <th>6日前</th>
+      <th>5日前</th>
+      <th>4日前</th>
+      <th>3日前</th>
+      <th>2日前</th>
+      <th>1日前</th>
+      <th>今日</th>
+    </tr>
+  </thead>
+  <tbody>
+      <td><%= current_user.tasks.complete_6day_ago.count %></td>
+      <td><%= current_user.tasks.complete_5day_ago.count %></td>
+      <td><%= current_user.tasks.complete_4day_ago.count %></td>
+      <td><%= current_user.tasks.complete_3day_ago.count %></td>
+      <td><%= current_user.tasks.complete_2day_ago.count %></td>
+      <td><%= current_user.tasks.complete_yesterday.count %></td>
+      <td><%= current_user.tasks.complete_today.count %></td>
+  </tbody>
+</table>
+
+<canvas id="myLineChart"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log("test")
+        $(document).on('turbolinks:load', function() {
+          var ctx = document.getElementById("myLineChart");
+          var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],
+              datasets: [
+                {
+                  label: '完了したタスクの数',
+                  data: [<%= current_user.tasks.complete_6day_ago.count %>, <%= current_user.tasks.complete_5day_ago.count %>, <%= current_user.tasks.complete_4day_ago.count %>, <%= current_user.tasks.complete_3day_ago.count %>, <%= current_user.tasks.complete_2day_ago.count %>, <%= current_user.tasks.complete_yesterday.count %>, <%= current_user.tasks.complete_today.count %>],
+                  borderColor: "rgba(254,239,3,0.5)",
+                  backgroundColor: "rgba(254,239,3,0.5)"
+                }
+              ],
+            },
+             options: {
+              title: {
+                display: true,
+                text: '7日間 完了したタスク数の比較'
+              },
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    suggestedMax: 10,
+                    suggestedMin: 0,
+                    stepSize: 1,
+                    callback: function(value, index, values){
+                      return  value
+                    }
+                  }
+                }]
+              },
+            }
+          });
+        });
+      });
+  </script>
+</div>

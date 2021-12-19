@@ -25,17 +25,21 @@
 .notice{
   color: #75B5A1;
   text-align: center;
-  margin-top: 10px;
 }
 
 .alert{
   color: #75B5A1;
   text-align: center;
-  margin-top: 10px;
 }
 
 .btn {
   border-radius: 100px;
+}
+
+@media screen and (max-width: 380px) {
+  .user-table{
+    width: 600px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -44,12 +48,12 @@
 
 .pagination li a {
   color: #75B5A1;
-  background-color: #FFF6E6;
+  background-color: #fff;
   border-radius: 5px;
 }
 .page-item.active .page-link {
   color: #75B5A1;
-  background-color: #EEE8C8;
+  background-color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -57,7 +61,7 @@
 --------------------------------------------------------------*/
 
 #images {
-  height: 400px;
+  height: 440px;
   padding-top: 50px;
   padding-bottom: 50px;
 
@@ -221,6 +225,14 @@ h3:after {
 }
 
 /*--------------------------------------------------------------
+# Note
+--------------------------------------------------------------*/
+
+.note-card {
+  border: thick double rgba(0, 0, 0, .3) !important;
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
@@ -229,8 +241,4 @@ footer{
   background-color: #073839;
   color: #fff;
   text-align: center;
-}
-
-.note-card {
-  border: thick double rgba(0, 0, 0, .3) !important;
 }

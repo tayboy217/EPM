@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="d-flex">
+  <h3 class="mt-4">タスク完了一覧</h3>
+  </div>
+  <%= link_to "タスク投稿", new_task_path, class: "btn btn-outline-success mt-2 mb-2" %>
+  <div class="row">
+   <% @tasks.each do |task| %>
+      <div class="col-md-4 mb-3">
+        <div class="card task-card">
+          <div class="card-body">
+            <h5 class="card-subtitle text-muted"><%= task.title %></h5>
+            <p class="card-text mt-2"><%= task.starts_at %></p>
+            <p class="card-text mt-2"><%= task.ends_at %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+<div class="jpagination ustify-content-center"><%= paginate @tasks %></div>
+</div>

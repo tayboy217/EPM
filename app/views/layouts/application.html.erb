@@ -17,11 +17,11 @@
       </header>
 
       <% if flash[:notice] %>
-        <p class="notice"><%= notice %></p>
+        <div class="alert alert-success text-center sm" role="alert"><%= notice %></div>
       <% end %>
 
       <% if flash[:alert] %>
-        <p class="alert"><%= alert %></p>
+        <div class="alert alert-success text-center sm" role="alert"><%= alert %></div>
       <% end %>
 
       <main>
