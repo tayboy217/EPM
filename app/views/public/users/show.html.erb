@@ -54,43 +54,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
   <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          console.log("test")
-        $(document).on('turbolinks:load', function() {
-          var ctx = document.getElementById("myLineChart");
-          var myLineChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],
-              datasets: [
-                {
-                  label: '投稿したフレーズの数',
-                  data: [<%= current_user.notes.created_6day_ago.count %>, <%= current_user.notes.created_5day_ago.count %>, <%= current_user.notes.created_4day_ago.count %>, <%= current_user.notes.created_3day_ago.count %>, <%= current_user.notes.created_2day_ago.count %>, <%= current_user.notes.created_yesterday.count %>, <%= current_user.notes.created_today.count %>],
-                  borderColor: "rgba(219,39,91,0.5)",
-                  backgroundColor: "rgba(219,39,91,0.5)"
-                }
-              ],
-            },
-            options: {
-              title: {
-                display: true,
-                text: '7日間の投稿数の比較'
-              },
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    suggestedMax: 10,
-                    suggestedMin: 0,
-                    stepSize: 1,
-                    callback: function(value, index, values){
-                      return  value
-                    }
-                  }
-                }]
-              },
+    $(document).on('turbolinks:load', function() {
+      var ctx = document.getElementById("myLineChart");
+      var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],
+          datasets: [
+            {
+              label: '投稿したフレーズの数',
+              data: [<%= current_user.notes.created_6day_ago.count %>, <%= current_user.notes.created_5day_ago.count %>, <%= current_user.notes.created_4day_ago.count %>, <%= current_user.notes.created_3day_ago.count %>, <%= current_user.notes.created_2day_ago.count %>, <%= current_user.notes.created_yesterday.count %>, <%= current_user.notes.created_today.count %>],
+              borderColor: "rgba(219,39,91,0.5)",
+              backgroundColor: "rgba(219,39,91,0.5)"
             }
-          });
-        });
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: '7日間の投稿数の比較'
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                suggestedMax: 10,
+                suggestedMin: 0,
+                stepSize: 1,
+                callback: function(value, index, values){
+                  return  value
+                }
+              }
+            }]
+          },
+        }
       });
+    });
   </script>
 </div>

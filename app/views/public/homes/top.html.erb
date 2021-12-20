@@ -1,20 +1,20 @@
 <% if user_signed_in? %>
 <div class="container">
   <div class="row">
-    <div class="col-5">
+    <div id="box" class="col-7">
+      <div id="images">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-5">
     <h3 class="mt-4">覚えたいフレーズを記録しよう</h3>
     <%= render 'public/notes/form', note: @note %>
-    </div>
-<div id="box" class="col-7">
-  <div id="images">
-    <div class="image1"></div>
-    <div class="image2"></div>
-    <div class="image3"></div>
-    <div class="image4"></div>
   </div>
-  </div>
-</div>
-</div>
 
 <script>
  $(document).ready(function () {
@@ -60,7 +60,20 @@
     <div class="section-title">
       <h4>About</h4>
     </div>
-     英語学習者向けのアプリ
   </div>
+  <div class="about-body">
+    <h5>オリジナル英会話フレーズ帳を作成しよう！</h5>
+    <p>
+          英会話を上達させるためにフレーズを覚えることは大切です。<br>
+          しかし、フレーズを丸暗記するだけでは会話のキャッチボールを楽しんだり、<br>
+          会話の幅を広げたりすることはできません。<br>
+          フレーズ学習を取り入れながら英語の基礎力を磨くことが大切です。<br>
+          cuhcuhdchoisadhhhhhhhhhhhhhhhhhhcoihefoihcweoihcoiweiohoeihiuv<br>
+          urhvoiehvoihdiohcoiqdhciohqwoiehoifheqwoihvoiqehvoihdecoiwdcihi<br>
+          urhvouedochqowidhcoiqhweoihcoiqwehoichqwoeihcoiwqhevoiheoivihoi<br>
+          iugviuedvuhqdhcoqwhdoichoqiwehcoihqweoihoiwehvoihqwehvoidouihdc<br>
+      </p>
+    </div>
+    <figure class="about_image"><%= image_tag 'pic1.jpg', size: "700x400", class: "img-thumbnail" %></figure>
 </section>
 <% end %>

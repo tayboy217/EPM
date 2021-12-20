@@ -24,19 +24,17 @@
 
 .notice{
   color: #75B5A1;
-  text-align: center;
 }
 
 .alert{
   color: #75B5A1;
-  text-align: center;
 }
 
 .btn {
   border-radius: 100px;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 415px) {
   .user-table{
     width: 600px;
   }
@@ -92,7 +90,7 @@
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("img-4.jpg") top center;
+  background: url("img8.jpg") top center;
   background-size: cover;
   position: relative;
   margin-bottom: -80px;
@@ -150,9 +148,12 @@
   }
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+
 #about .about-container {
   bottom: 0;
   top: 0;
@@ -160,27 +161,65 @@
   right: 0;
   display: flex;
   padding-top: 100px;
-  padding-left: 100px;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+}
+
+#about .about_image{
+  display: inline-block;
+  padding-left: 50px;
+}
+
+#about .about-body {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#about p {
+  padding-top: 10px;
 }
 
 #about h4 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 0 20px 0;
+  font-size: 40px;
   font-weight: 300;
   line-height: 56px;
 }
 
-@media (max-width: 768px) {
-  #about h4 {
-    font-size: 28px;
-    line-height: 36px;
-  }
+
+#about h5 {
+  font-family: "Open Sans", sans-serif;
+  margin: 0 0 0 10px ;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 20px;
 }
 
+// @media (max-width: 768px) {
+//   #about .about-container {
+//   text-align: center;
+//   }
+//   #about h4 {
+//     font-size: 28px;
+//     line-height: 36px;
+//   }
+//   #about h5 {
+//     font-size: 20px;
+//     line-height: 36px;
+//   }
+// }
 
 /*--------------------------------------------------------------
 # Body
@@ -241,4 +280,5 @@ footer{
   background-color: #073839;
   color: #fff;
   text-align: center;
+  font-size: 14px;
 }

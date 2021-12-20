@@ -4,34 +4,34 @@
     <title>EPM</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
   <body>
-    <div class="wrapper">
-
       <header class="shadow">
         <%= render "layouts/header" %>
       </header>
 
-      <% if flash[:notice] %>
-        <div class="alert alert-success text-center sm" role="alert"><%= notice %></div>
+    <div class="wrapper">
+
+
+
+      <main>
+        <% if flash[:notice] %>
+        <div class="alert alert-success text-center"><%= notice %></div>
       <% end %>
 
       <% if flash[:alert] %>
-        <div class="alert alert-success text-center sm" role="alert"><%= alert %></div>
+        <div class="alert alert-success text-center"><%= alert %></div>
       <% end %>
-
-      <main>
             <%= yield %>
       </main>
 
       <footer>
         <%= render "layouts/footer" %>
       </footer>
-
     </div>
   </body>
 </html>

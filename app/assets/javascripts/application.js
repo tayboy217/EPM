@@ -10,55 +10,54 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require rails-ujs
+//= require popper
+//= require bootstrap
+//= require jquery
+//= require moment
+//= require fullcalendar
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require moment
-//= require fullcalendar
 
 
 
-
-$(function () {
+ $(document).on('turbolinks:load', function () {
+    function eventCalendar() {
+        return $('#calendar').fullCalendar({});
+    };
+    function clearCalendar() {
+        $('#calendar').html('');
+    };
     $(document).on('turbolinks:load', function () {
-        function eventCalendar() {
-            return $('#calendar').fullCalendar({});
-        };
-        function clearCalendar() {
-            $('#calendar').html('');
-        };
-        $(document).on('turbolinks:load', function () {
-          eventCalendar();
-        });
-        $(document).on('turbolinks:before-cache', clearCalendar);
-        $('#calendar').fullCalendar({
-          events: '/tasks.json',
-          //カレンダー上部を年月で表示させる
-          titleFormat: 'YYYY年 M月',
-          //曜日を日本語表示
-          dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
-           header: {
-            left: 'prev,next today myCustomButton',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay,list',
-            defaultView: 'listWeek',
-           },
-           //イベントの時間表示を２４時間に
-            timeFormat: "HH:mm",
-            // Drag & Drop & Resize
-            editable: true,
-            //イベントの色を変える
-            eventColor: '#EBAFA2',
-            //イベントの文字色を変える
-            eventTextColor: '#475263',
-            eventRender: function(event, element) {
-            element.css("font-size", "0.8em");
-            element.css("padding", "5px");
-            element.find('span.fc-title').html(element.find('span.fc-title').text());
-            },
-        });
-     });
-});
-
+      eventCalendar();
+    });
+    $(document).on('turbolinks:before-cache', clearCalendar);
+    $('#calendar').fullCalendar({
+      events: '/tasks.json',
+      //カレンダー上部を年月で表示させる
+      titleFormat: 'YYYY年 M月',
+      //曜日を日本語表示
+      dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+       header: {
+        left: 'prev,next today myCustomButton',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,list',
+        defaultView: 'listWeek',
+       },
+       //イベントの時間表示を２４時間に
+        timeFormat: "HH:mm",
+        // Drag & Drop & Resize
+        editable: true,
+        //イベントの色を変える
+        eventColor: '#EBAFA2',
+        //イベントの文字色を変える
+        eventTextColor: '#475263',
+        eventRender: function(event, element) {
+        element.css("font-size", "0.8em");
+        element.css("padding", "5px");
+        element.find('span.fc-title').html(element.find('span.fc-title').text());
+        },
+    });
+ });
