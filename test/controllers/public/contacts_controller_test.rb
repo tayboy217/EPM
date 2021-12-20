@@ -10,5 +10,4 @@ class Public::ContactsControllerTest < ActionDispatch::IntegrationTest
     get public_contacts_create_url
     assert_response :success
   end
-
 end

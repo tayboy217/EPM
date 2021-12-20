@@ -1,6 +1,10 @@
 <% if user_signed_in? %>
 <div class="container">
   <div class="row">
+    <div class="col-5">
+        <h3 class="mt-4">覚えたいフレーズを記録しよう</h3>
+        <%= render 'public/notes/form', note: @note %>
+    </div>
     <div id="box" class="col-7">
       <div id="images">
         <div class="image1"></div>
@@ -11,10 +15,7 @@
       </div>
     </div>
   </div>
-  <div class="col-5">
-    <h3 class="mt-4">覚えたいフレーズを記録しよう</h3>
-    <%= render 'public/notes/form', note: @note %>
-  </div>
+
 
 <script>
  $(document).ready(function () {

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :notes, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :contact, dependent: :destroy
-  
+
   # ゲストユーザー
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

@@ -5,5 +5,4 @@ class Admin::ContactsControllerTest < ActionDispatch::IntegrationTest
     get admin_contacts_index_url
     assert_response :success
   end
-
 end
