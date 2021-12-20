@@ -12,6 +12,7 @@ class Admin::ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     ContactMailer.send_when_admin_reply(@contact.user, params[:contact][:reply]).deliver_now # 確認メールを送信
     redirect_to admin_contacts_path
+     flash[:notice] = '送信が完了しました'
   end
 
   def destroy
@@ -20,6 +21,7 @@ class Admin::ContactsController < ApplicationController
     @contacts = Contact.where.not(user_id: nil).page(params[:page]).order(created_at: :desc).per(10)
     @users = User.all
     render :index
+    flash[:notice] = '削除しました'
   end
 
   private

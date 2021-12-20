@@ -22,14 +22,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
-.notice{
-  color: #75B5A1;
-}
-
-.alert{
-  color: #75B5A1;
-}
-
 .btn {
   border-radius: 100px;
 }
@@ -37,6 +29,12 @@
 @media screen and (max-width: 415px) {
   .user-table{
     width: 600px;
+  }
+  .admin-table{
+    width: 600px;
+  }
+  .admin-contact-table{
+    width: 700px;
   }
 }
 

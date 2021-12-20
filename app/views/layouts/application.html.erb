@@ -17,15 +17,14 @@
     <div class="wrapper">
 
 
-
-      <main>
-        <% if flash[:notice] %>
+     <% if flash[:notice] %>
         <div class="alert alert-success text-center"><%= notice %></div>
       <% end %>
-
       <% if flash[:alert] %>
-        <div class="alert alert-success text-center"><%= alert %></div>
+        <div class="alert alert-danger text-center"><%= alert %></div>
       <% end %>
+      
+      <main>
             <%= yield %>
       </main>
 

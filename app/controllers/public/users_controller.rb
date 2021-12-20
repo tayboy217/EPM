@@ -11,14 +11,13 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to users_path
+      flash[:notice] = '更新が完了しました'
     else
       render :edit
+      flash[:alert] = '更新ができませんでした'
     end
   end
 
-  def quit
-    @user = current_user
-  end
 
   private
 
