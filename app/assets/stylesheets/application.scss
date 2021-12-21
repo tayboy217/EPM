@@ -36,8 +36,10 @@
   .admin-contact-table{
     width: 700px;
   }
+  .chart-table{
+     width: 450px;
+  }
 }
-
 /*--------------------------------------------------------------
 # Pagination
 --------------------------------------------------------------*/
@@ -64,19 +66,19 @@
 }
 
 .image1 {
-  background-image: url("img8.jpg");
+  background-image: image-url("pic2.png");
   height: 400px;
 }
 .image2 {
-  background-image: url("img7.jpg");
+  background-image: image-url("img7.jpg");
   height: 400px;
 }
 .image3 {
-  background-image: url("img6.jpg");
+  background-image: image-url("img6.jpg");
   height: 400px;
 }
 .image4 {
-  background-image: url("img8.jpg");
+  background-image: image-url("img8.jpg");
   height: 400px;
 }
 
@@ -88,7 +90,7 @@
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("img8.jpg") top center;
+  background: image-url("img8.jpg") top center;
   background-size: cover;
   position: relative;
   margin-bottom: -80px;
@@ -157,52 +159,20 @@
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
   padding-top: 100px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-#about .about_image{
-  display: inline-block;
-  padding-left: 50px;
-}
-
-#about .about-body {
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: inline-block;
-  padding-top: 10px;
-  padding-left: 60px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
 }
 
 #about p {
-  padding-top: 10px;
+  padding-left: 10px;
 }
 
-#about h4 {
-  font-family: "Open Sans", sans-serif;
-  margin: 0 0 20px 0;
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 56px;
+#about h2{
+  color: #fff;
 }
 
-
-#about h5 {
-  font-family: "Open Sans", sans-serif;
-  margin: 0 0 0 10px ;
-  font-size: 25px;
-  font-weight: 300;
-  line-height: 20px;
+#about .wrapper {
+  width:100%;
+  overflow:hidden;
 }
 
 // @media (max-width: 768px) {

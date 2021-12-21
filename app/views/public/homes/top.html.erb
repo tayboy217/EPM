@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 <div class="container">
   <div class="row">
-    <div class="col-5">
-        <h3 class="mt-4">覚えたいフレーズを記録しよう</h3>
-        <%= render 'public/notes/form', note: @note %>
+    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+      <h3 class="mt-4">覚えたいフレーズを記録しよう</h3>
+      <%= render 'public/notes/form', note: @note %>
     </div>
-    <div id="box" class="col-7">
+    <div id="box" class="col-lg-6 order-1 order-lg-2">
       <div id="images">
         <div class="image1"></div>
         <div class="image2"></div>
@@ -15,66 +15,74 @@
       </div>
     </div>
   </div>
-
-
+  <!--Skkiperスライドショー-->
 <script>
  $(document).ready(function () {
           $("#images").skippr({
-            // スライドショーの変化 ("fade" or "slide")
             transition : 'slide',
-            // 変化に係る時間(ミリ秒)
             speed : 1000,
-            // easingの種類
             easing : 'easeOutQuart',
-            // ナビゲーションの形("block" or "bubble")
             navType : 'block',
-            // 子要素の種類("div" or "img")
             childrenElementType : 'div',
-            // ナビゲーション矢印の表示(trueで表示)
             arrows : true,
-            // スライドショーの自動再生(falseで自動再生なし)
             autoPlay : true,
-            // 自動再生時のスライド切替間隔(ミリ秒)
             autoPlayDuration : 3000,
-            // キーボードの矢印キーによるスライド送りの設定(trueで有効)
             keyboardOnAlways : true,
-            // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
             hidePrevious : false
           });
         });
 </script>
 
+<% elsif admin_signed_in? %>
+<div class="container">
+  <div class="d-flex">
+   <h3 class="mt-4">管理者専用ページ</h3>
+  </div>
+</div>
+
+
 <% else %>
 <section id="hero">
   <div class="hero-container">
     <h1>Welcome to EPM</h1>
-    <h2><%= link_to 'ゲスト(閲覧用)はこちら', users_guest_sign_in_path, method: :post, class:"text-light" %></h2>
-    <h2><%= link_to 'ログインはこちら', new_user_session_path, class:"text-light" %></h2>
-    <h2><%= link_to '新規登録はこちら', new_user_registration_path, class:"text-light" %></h2>
+      <h2><%= link_to 'ゲスト(閲覧用)はこちら', users_guest_sign_in_path, method: :post, class:"text-light" %></h2>
+      <h2><%= link_to 'ログインはこちら', new_user_session_path, class:"text-light" %></h2>
+      <h2><%= link_to '新規登録はこちら', new_user_registration_path, class:"text-light" %></h2>
     <div class="mt-2 mb-2" style="color: #fff">or</div>
-    <h2><%= link_to "管理者はこちら",  new_admin_session_path, class: "text-light" %></h2>
+      <h2><%= link_to "管理者はこちら",  new_admin_session_path, class: "text-light" %></h2>
   </div>
 </section>
 
 <section id="about" class="about">
   <div class="about-container">
+    <div class="wrapper">
+
     <div class="section-title">
-      <h4>About</h4>
+      <h2 class="text-center">About</h2>
     </div>
-  </div>
-  <div class="about-body">
-    <h5>オリジナル英会話フレーズ帳を作成しよう！</h5>
-    <p>
-          英会話を上達させるためにフレーズを覚えることは大切です。<br>
-          しかし、フレーズを丸暗記するだけでは会話のキャッチボールを楽しんだり、<br>
-          会話の幅を広げたりすることはできません。<br>
-          フレーズ学習を取り入れながら英語の基礎力を磨くことが大切です。<br>
-          cuhcuhdchoisadhhhhhhhhhhhhhhhhhhcoihefoihcweoihcoiweiohoeihiuv<br>
-          urhvoiehvoihdiohcoiqdhciohqwoiehoifheqwoihvoiqehvoihdecoiwdcihi<br>
-          urhvouedochqowidhcoiqhweoihcoiqwehoichqwoeihcoiwqhevoiheoivihoi<br>
-          iugviuedvuhqdhcoqwhdoichoqiwehcoihqweoihoiwehvoihqwehvoidouihdc<br>
-      </p>
-    </div>
-    <figure class="about_image"><%= image_tag 'pic1.jpg', size: "700x400", class: "img-thumbnail" %></figure>
-</section>
+
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <%= image_tag 'pic1.jpg', class: "img-fluid img-thumbnail" %>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+        <h3 class="text-center">英会話フレーズを作成しよう</h3>
+          <p class="fst-italic">
+            英会話フレーズの作成方法
+          </p>
+          <ul>
+            <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+            <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+          </ul>
+            <p class="ml-2">
+             英会話を上達させるためにフレーズを覚えることは大切です。<br>
+             しかし、フレーズを丸暗記するだけでは会話のキャッチボールを楽しんだり、<br>
+             会話の幅を広げたりすることはできません。<br>フレーズ学習を取り入れながら英語の基礎力を磨くことが大切です。
+            </p>
+        </div>
+      </div>
+      
+   </div>
+  </section>
 <% end %>
