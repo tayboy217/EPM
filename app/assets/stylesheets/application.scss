@@ -21,9 +21,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+@mixin g-c($color1,$color2) {
+  background: linear-gradient($color1, $color2);
+}
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #777;
+  background-color: #FFF6E6;
+}
+
+
+h1, h2, h3, h4, h5, h6, .font-primary {
+  font-family: "Lato", sans-serif;
+}
+
+h3 {
+  border-bottom: solid 3px skyblue;
+  position: relative;
+}
+
+h3:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -3px;
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+    line-height: 36px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .btn {
   border-radius: 100px;
+}
+
+.EPM {
+  border-bottom: 1px solid;
 }
 
 @media screen and (max-width: 415px) {
@@ -37,7 +86,10 @@
     width: 700px;
   }
   .chart-table{
-     width: 450px;
+    width: 450px;
+  }
+  .calendar-table{
+    width: 700px;
   }
 }
 /*--------------------------------------------------------------
@@ -94,9 +146,8 @@
   background-size: cover;
   position: relative;
   margin-bottom: -80px;
-}
 
-#hero:before {
+&::before {
   content: "";
   background: rgba(173, 154, 133, 0.85);
   position: absolute;
@@ -104,8 +155,10 @@
   top: 0;
   left: 0;
   right: 0;
+ }
 }
-#hero .hero-container {
+
+.hero-container {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -117,19 +170,24 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-}
-#hero h1 {
+
+  h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
+  font-size: 50px;
   font-weight: 300;
   line-height: 56px;
   color: #fff;
-}
-#hero h2 {
+  font-family: "Open Sans", sans-serif;
+  }
+
+ h2 {
   margin-bottom: 5px;
   font-size: 15px;
   font-weight: 300;
+ }
 }
+
+
 
 @media (min-width: 1024px) {
   #hero {
@@ -137,16 +195,22 @@
   }
 }
 @media (max-width: 768px) {
-  #hero h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-  #hero h2 {
-    font-size: 12px;
-    line-height: 24px;
-    margin-bottom: 10px;
+
+  .hero-container{
+
+    h1 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    h2 {
+      font-size: 12px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
   }
 }
+
 
 
 /*--------------------------------------------------------------
@@ -160,20 +224,23 @@
   left: 0;
   right: 0;
   padding-top: 100px;
+
+  p {
+    padding-left: 10px;
+  }
+
+  h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    color: #777;
+   }
+
+ .wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
 }
 
-#about p {
-  padding-left: 10px;
-}
-
-#about h2{
-  color: #fff;
-}
-
-#about .wrapper {
-  width:100%;
-  overflow:hidden;
-}
 
 // @media (max-width: 768px) {
 //   #about .about-container {
@@ -188,48 +255,6 @@
 //     line-height: 36px;
 //   }
 // }
-
-/*--------------------------------------------------------------
-# Body
---------------------------------------------------------------*/
-
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #777;
-  background-color: #FFF6E6;
-}
-
-
-h1, h2, h3, h4, h5, h6, .font-primary {
-  font-family: "Lato", sans-serif;
-}
-
-h3 {
-  border-bottom: solid 3px skyblue;
-  position: relative;
-}
-
-h3:after {
-  position: absolute;
-  content: " ";
-  display: block;
-  border-bottom: solid 3px #ffc778;
-  bottom: -3px;
-  width: 30%;
-}
-
-@media (max-width: 768px) {
-  h3 {
-    font-size: 20px;
-    line-height: 36px;
-  }
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 /*--------------------------------------------------------------
 # Note
