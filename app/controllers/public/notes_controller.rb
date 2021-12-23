@@ -70,8 +70,8 @@ class Public::NotesController < ApplicationController
   end
 
   def search
-    @notes = current_user.notes.all
-  end
+    @notes = current_user.notes.all.page(params[:page]).per(10).order('updated_at DESC')
+  end 
 
   private
 

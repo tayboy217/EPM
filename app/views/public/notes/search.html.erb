@@ -1,10 +1,30 @@
-<tbody>
-<% @search_notes.each do |note| %>
-  <tr>
-    <td><%= note.word %></td>
-    <td><%= note.english %></td>
-    <td><%= note.japanese %></td>
-    <td><%= link_to '戻る', remember_index_notes_path %></td>
- </tr>
-<% end %>
-</tbody>
+<div class="container">
+  <div class="d-flex">
+  <h3 class="mt-4">検索結果</h3>
+  </div>
+    <div class="table-responsive">
+     <table class="table note-table">
+      <thead>
+        <tr class="table-success">
+          <th></th>
+          <th>キーワード</th>
+          <th>英語</th>
+          <th>日本語</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @search_notes.each do |note| %>
+        <tr>
+          <th scope="row">︎</th>
+          <td><%= note.word %></td>
+          <td><%= note.english %></td>
+          <td><%= note.japanese %></td>
+          <td><%= link_to '戻る',  remember_index_notes_path, class: "btn btn-outline-info btn" %></td>
+        </tr>
+      </tbody>
+        <% end %>
+    </table>
+  </div>
+  <ul class="pagination justify-content-center"><%= paginate @notes %></ul>
+<div>
