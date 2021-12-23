@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      task:
+      note:
+      contact:
+    attributes:
+      task:
+        title: 'タイトル'
+      note:
+        word: 'キーワード'
+        english: '英語'
+        japanese: '日本語'
+      contact:
+         body: 'お問い合わせ内容'
+         title: 'タイトル'
+
+

@@ -2,7 +2,7 @@
   <div class="d-flex">
     <h3>ユーザー編集</h3>
   </div>
-  <div class="container mt-4">
+  <%= render 'layouts/error', model: @user %>
   <%= form_with model: @user, local: true do |f| %>
     <div class="field">
       <%= f.label :name, class: "col-sm-2 control-label mr-2" %>

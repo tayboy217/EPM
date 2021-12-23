@@ -23,7 +23,7 @@ class Public::TasksController < ApplicationController
       redirect_to new_task_path
       flash[:notice] = 'タスク投稿が完了しました'
     else
-      render root_path
+      render action: :new
       flash[:alert] = 'タスク投稿ができませんでした'
     end
   end

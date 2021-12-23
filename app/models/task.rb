@@ -2,7 +2,7 @@ class Task < ApplicationRecord
   belongs_to :users, optional: true
 
   validates :title, presence: true
-
+ 
   # 7日間のタスクの完了数
   scope :complete_today, -> { where(complete: true, updated_at: Time.zone.now.all_day) }
   scope :complete_yesterday, -> { where(complete: true, updated_at: 1.day.ago.all_day) }

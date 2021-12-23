@@ -1,13 +1,14 @@
 <div class="container">
  <div class="d-flex">
   <h3 class="mt-4">タスク新規投稿</h3>
+  <%= render 'layouts/error', model: @task %>
  </div>
   <%= form_with model: @task, local:true do |f| %>
-    <div>タスク内容</div>
-   <%= f.text_field :title %>
-   <%= f.datetime_field :starts_at %>
-   <%= f.datetime_field :ends_at %>
-   <%= f.submit '投稿' %>
+  <div>タスク内容</div>
+     <%= f.text_field :title, class: "mt-2" %>
+     <%= f.datetime_field :starts_at, class: "mt-2" %>
+     <%= f.datetime_field :ends_at, class: "mt-2" %>
+     <%= f.submit '投稿', class: "btn btn-outline-info btn ml-2" %>
   <% end %>
 </div>
 <div class="container">
@@ -24,7 +25,7 @@
         <div>
           <%= link_to "完了", task_path(task), method: :delete, data: { confirm: "タスクは完了しましたか？" }, class: "btn btn-outline-warning"  %>
           <%= link_to "編集", edit_task_path(task), class: "btn btn-outline-info btn-sm" %>
-          </div>
+        </div>
       </div>
     </div>
   </div>

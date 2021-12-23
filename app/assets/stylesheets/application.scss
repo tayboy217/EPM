@@ -98,6 +98,13 @@ h3:after {
     width: 700px;
   }
 }
+
+  .field_with_errors  {
+    color: red;
+    background-color: #fcc;
+    padding: 2px;
+    border-radius: 5px;
+}
 /*--------------------------------------------------------------
 # Pagination
 --------------------------------------------------------------*/
