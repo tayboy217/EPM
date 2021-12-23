@@ -1,10 +1,24 @@
 <div class="container">
   <div class="d-flex">
-    <h3>タスク詳細</h3>
+    <h3 class="mt-4">タスク詳細</h3>
    </div>
-</div>
-<div class="container">
-  <div><%= @task.title %></div>
-  <div><%= @task.starts_at %></div>
-  <div><%= @task.ends_at %></div>
+   <div class="table-responsive">
+    <table class="table task-table">
+    <thead>
+      <tr class="table-success">
+        <th>タスク内容</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @task.title %></td>
+        <td><%= @task.starts_at %></td>
+        <td><%= @task.ends_at %></td>
+      </tr>
+    </tbody>
+    </table>
+   </div>
 </div>

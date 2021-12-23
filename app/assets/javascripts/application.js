@@ -43,7 +43,7 @@
        header: {
         left: 'prev,next today myCustomButton',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,list',
+        right: 'month,agendaDay,list',
         defaultView: 'listWeek',
        },
        //イベントの時間表示を２４時間に

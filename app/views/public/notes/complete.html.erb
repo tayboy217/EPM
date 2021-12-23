@@ -1,12 +1,10 @@
 <div class="container">
-  <div class="row">
+ <div class="d-flex">
   <h3 class="mt-4">覚えたフレーズ詳細</h3>
   </div>
-</div>
-<div class="container">
- <div class="row">
   <%= link_to "覚えたページ一覧", complete_index_notes_path, class: "btn btn-outline-success mt-2 mb-2" %>
-    <table class="table table-hover">
+  <div class="table-responsive">
+    <table class="table note-table">
       <thead>
         <tr class="table-success">
           <th></th>

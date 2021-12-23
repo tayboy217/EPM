@@ -1,22 +1,21 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="d-flex">
     <h3>ユーザー編集</h3>
   </div>
-</div>
-<div class="container mt-4">
-<%= form_with model: @user, local: true do |f| %>
-  <div class="field">
-  <%= f.label :name, class: "col-sm-2 control-label mr-2" %>
-  <%= f.text_field :name, class: "col-sm-3 control-label" %>
-  </div>
-  
-  <div class="field">
-  <%= f.label :email, class:  "col-sm-2 control-label mr-2" %>
-  <%= f.text_field :email, class: "col-sm-3 control-label" %>
-  </div>
-  
-  <div class="mt-2 ml-3">
-  <%= f.submit "Update", class: "btn btn-outline-info" %>
-  </div>
-<% end %>
+  <div class="container mt-4">
+  <%= form_with model: @user, local: true do |f| %>
+    <div class="field">
+      <%= f.label :name, class: "col-sm-2 control-label mr-2" %>
+      <%= f.text_field :name, class: "col-sm-3 control-label" %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :email, class:  "col-sm-2 control-label mr-2" %>
+      <%= f.text_field :email, class: "col-sm-3 control-label" %>
+    </div>
+    
+    <div class="mt-2 ml-3">
+      <%= f.submit "更新", class: "btn btn-outline-info" %>
+    </div>
+  <% end %>
 </div>
