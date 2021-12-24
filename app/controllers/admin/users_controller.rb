@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
-    @users = User.all.includes([:user])
+    @users = User.all
   end
 
   def show
@@ -11,4 +11,6 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+  end
 end

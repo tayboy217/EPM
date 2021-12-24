@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :contact, dependent: :destroy
 
-  validates :name, length: {maximum: 20, minimum: 2}
+  validates :name,presence: true, length: {maximum: 20, minimum: 2}
   validates :email, presence: true
   
   # ゲストユーザー

@@ -39,12 +39,12 @@
 </script>
 
 <% elsif admin_signed_in? %>
-<div class="container">
-  <div class="d-flex">
-   <h3 class="mt-4">管理者専用ページ</h3>
-  </div>
-</div>
 
+<section id="hero">
+  <div class="hero-container">
+    <h1>Welcome to EPM</h1>
+  </div>
+</section>
 
 <% else %>
 <section id="hero">
@@ -72,22 +72,32 @@
       </div>
       <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
         <h3 class="text-center">英会話フレーズを作成しよう</h3>
-          <p class="fst-italic">
-            英会話フレーズの作成方法
-          </p>
-          <ul>
-            <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-          </ul>
-            <p class="ml-2">
-             英会話を上達させるためにフレーズを覚えることは大切です。<br>
-             しかし、フレーズを丸暗記するだけでは会話のキャッチボールを楽しんだり、<br>
-             会話の幅を広げたりすることはできません。<br>フレーズ学習を取り入れながら英語の基礎力を磨くことが大切です。
-            </p>
+        <div class="text-center">
+          <p class="aPp font-weight-bold">EPMは英語学習者向けのアプリです</p>
+        </div>
+          <div class="sheet">
+            <div class="text-center">
+              <p class="fst-italic text-monospace">【英会話フレーズの作成方法】</p>
+            </div>
+              <ul class="ePm">
+                <li>覚えたいフレーズを『キーワード・英語・日本語』に分けて記録しよう！</li>
+
+                <li>覚えたフレーズは覚えるボタンをクリックして整理しよう！</li>
+
+                <li>英会話フレーズは何度も覚えるまでブラッシュアップしよう！</li>
+              </ul>
+            <div class="text-center">
+              <p class="eNglish ml-2">
+                 英会話を上達させるためにフレーズを覚えることは大切です。<br>
+                 しかし、フレーズを丸暗記するだけでは会話のキャッチボールを楽しんだり、<br>
+                 会話の幅を広げたりすることはできません。<br>フレーズ学習を取り入れながら英語の基礎力を磨くことが大切です。<br>
+                 楽しく自分自身が必要とする英会話フレーズをたくさんインプット・アウトプットしていき<br>英語力を向上させていきましょう！
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
+     </div>
    </div>
   </section>
 <% end %>
