@@ -1,6 +1,6 @@
 class Admin::ContactsController < ApplicationController
   def index
-    @contacts = Contact.where.not(user_id: nil).page(params[:page]).order(created_at: :desc).per(10)
+    @contacts = Contact.where.not(user_id: nil).includes(:user).page(params[:page]).order(created_at: :desc).per(10)
     @users = User.all
   end
 
