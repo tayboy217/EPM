@@ -18,12 +18,13 @@ class Public::TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @tasks = current_user.tasks.where(complete: false).page(params[:page]).per(3).order('updated_at DESC')
     @task.user_id = current_user.id
     if @task.save
       redirect_to new_task_path
       flash[:notice] = 'タスク投稿が完了しました'
     else
-      render root_path
+      render :new
       flash[:alert] = 'タスク投稿ができませんでした'
     end
   end
@@ -47,7 +48,7 @@ class Public::TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update(complete: true)
     redirect_to tasks_path
-    flash[:notice] = '削除しました'
+    flash[:notice] = 'タスク完了!!'
   end
 
   private

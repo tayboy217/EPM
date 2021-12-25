@@ -1,8 +1,8 @@
 <div class="container">
  <div class="d-flex">
   <h3 class="mt-4">タスク新規投稿</h3>
-  <%= render 'layouts/error', model: @task %>
  </div>
+ <%= render 'layouts/error', model: @task %>
   <%= form_with model: @task, local:true do |f| %>
   <div>タスク内容</div>
      <%= f.text_field :title, class: "mt-2" %>
