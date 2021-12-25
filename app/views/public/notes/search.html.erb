@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="d-flex">
+    <h3 class="mt-4">覚えたフレーズ集</h3>
+  </div>
+  <div class="table-responsive">
+    <table class="table note-table mt-2">
+      <thead>
+        <tr class="table-success">
+          <th>キーワード</th>
+          <th>英語</th>
+          <th>日本語</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @search_notes.each do |note| %>
+        <tr>
+          <td><%= note.word %></td>
+          <td><%= note.english %></td>
+          <td><%= note.japanese %></td>
+          <td><%= link_to '戻る', remember_index_notes_path, class: "btn btn-outline-info btn-sm"  %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<div>
