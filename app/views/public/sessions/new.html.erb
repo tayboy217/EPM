@@ -1,28 +1,37 @@
 <div class="container mt-4 text-center">
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="d-flex justify-content-center text-center">
+    <h3>ログイン</h3>
   </div>
+    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+      <div class="field mt-3 mb-3">
+        <%= f.submit "ログイン", class: "btn btn-secondary" %>
+       </div>
+        <% end %>
+      <div class="d-flex justify-content-center mb-5 text-center">
+      <div class="mb-5">
+        アカウント作成はこちら<br>
+          <p class="mt-2">
+            <%= render "public/shared/links" %>
+          </p>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "public/shared/links" %>
-</div>
+
