@@ -5,25 +5,25 @@ describe 'ユーザログイン前のテスト' do
     before do
       visit root_path
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/'
       end
     end
   end
-  
+
   describe '新規登録画面のテスト' do
     before do
       visit '/users/sign_up'
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/users/sign_up'
       end
-      it '新規会員登録と表示される' do
-        expect(page).to have_content '新規会員登録'
+      it '新規登録と表示される' do
+        expect(page).to have_content '新規登録'
       end
       it '名前が表示される' do
         expect(page).to have_field 'user[name]'
@@ -42,12 +42,12 @@ describe 'ユーザログイン前のテスト' do
       end
     end
   end
-  
+
   describe 'ログイン画面のテスト' do
     before do
       visit '/users/sign_in'
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/users/sign_in'
@@ -70,19 +70,19 @@ describe '管理者ログイン前のテスト' do
     before do
       visit root_path
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/'
       end
     end
   end
-  
+
   describe '管理者ログイン画面のテスト' do
     before do
       visit '/admins/sign_in'
     end
-    
+
     context '表示内容の確認' do
       it 'URLが正しい' do
         expect(current_path).to eq '/admins/sign_in'
