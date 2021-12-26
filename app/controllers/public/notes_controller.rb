@@ -1,4 +1,6 @@
 class Public::NotesController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @note = Note.new
   end
@@ -66,7 +68,7 @@ class Public::NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
     redirect_to remember_index_notes_path
-    flash[:notice] = '削除しました'
+    flash[:alert] = '削除しました'
   end
 
   def search

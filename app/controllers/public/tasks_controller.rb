@@ -1,4 +1,6 @@
 class Public::TasksController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @task = Task.new
     @tasks = current_user.tasks.where(complete: false).page(params[:page]).per(3).order('updated_at DESC')

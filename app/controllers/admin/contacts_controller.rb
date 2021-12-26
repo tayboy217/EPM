@@ -1,4 +1,6 @@
 class Admin::ContactsController < ApplicationController
+  before_action :authenticate_admin!
+  
   def index
     @contacts = Contact.where.not(user_id: nil).includes(:user).page(params[:page]).order(created_at: :desc).per(10)
     @users = User.all
@@ -18,10 +20,10 @@ class Admin::ContactsController < ApplicationController
   def destroy
     contact = Contact.find(params[:id])
     contact.destroy
-    @contacts = Contact.where.not(user_id: nil).page(params[:page]).order(created_at: :desc).per(10)
+    @contacts = Contact.where.not(user_id: nil).includes([:user]).page(params[:page]).order(created_at: :desc).per(10)
     @users = User.all
     render :index
-    flash[:notice] = '削除しました'
+    flash[:alert] = '削除しました'
   end
 
   private
