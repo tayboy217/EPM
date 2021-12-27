@@ -29,7 +29,7 @@
 
 
 ## ER図
-![ER図](https://user-images.githubusercontent.com/90984182/144848587-4ac525d8-0e56-44cf-a4a2-97d42a6d5a29.jpeg)
+![ER図](https://user-images.githubusercontent.com/90984182/147440988-e4380564-a723-40a8-a2e3-aa2041cfa1aa.jpeg)
 
 
 ### その他設計書
